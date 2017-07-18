@@ -11,6 +11,24 @@ import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component
 import { CustomPipesComponent } from './custom-pipes/custom-pipes.component';
 import { CapitalizePipe } from './pipes/capitalize.pipes';
 import { NgForExampleComponent } from './ng-for-example/ng-for-example.component';
+import {MySignupFormComponent} from './my-signup-form/my-signup-form.component';
+import { QuoteItemComponent } from './quote-item/quote-item.component';
+import { QuoteListComponent } from './quote-list/quote-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MyHomeComponent} from './my-home/my-home.component';
+import { MyAboutComponent} from './my-about/my-about.component';
+import { RouterOutlet } from '@angular/router';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactComponent } from './contact/contact.component';
+import { MyCounterComponent } from './my-counter/my-counter.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home',  component: MyHomeComponent },
+  { path: 'about', component: MyAboutComponent },
+  { path: '', component: ContactListComponent },
+  { path: 'contact/:id', component: ContactComponent}
+];
 
 @NgModule({
   declarations: [
@@ -23,11 +41,21 @@ import { NgForExampleComponent } from './ng-for-example/ng-for-example.component
     BuiltInPipesComponent,
     CustomPipesComponent,
     CapitalizePipe,
-    NgForExampleComponent
+    NgForExampleComponent,
+    MySignupFormComponent,
+    QuoteItemComponent,
+    QuoteListComponent,
+    MyHomeComponent,
+    MyAboutComponent,
+    ContactListComponent,
+    ContactComponent,
+    MyCounterComponent
+
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

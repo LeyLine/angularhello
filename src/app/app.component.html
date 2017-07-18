@@ -1,9 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+
   <h1>
     Welcome to {{title}}!!
   </h1>
+  <app-my-counter></app-my-counter>
+  <app-contact-list></app-contact-list>
+  <router-outlet></router-outlet>
+
   <p> {{ content }}</p>
+  <nav>
+      <ul>
+        <li> <a [routerLink]="['home']"> Home </a> </li>
+        <li> <a [routerLink]="['about']"> About </a> </li>
+      </ul>
+    </nav>
+    <h1> {{ title }} </h1>
   <hr>
   <app-my-nested></app-my-nested>
   <app-my-property-binding> </app-my-property-binding>
@@ -15,4 +27,6 @@
 <app-built-in-pipes></app-built-in-pipes>
 <app-custom-pipes></app-custom-pipes>
 <app-ng-for-example></app-ng-for-example>
+<app-my-signup-form></app-my-signup-form>
+<quote-list></quote-list>
 </div>

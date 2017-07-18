@@ -3,7 +3,7 @@
 </p>
 
 <ul>
-    <li *ngFor="let animal of animals, let i = index">
-        {{ i }} - {{ animal.name }}
+    <li *ngFor="let animal of animals, let i = index, let x = odd">
+        {{ i }} - {{ x }} - {{ animal.name }}
     </li>
 </ul>
