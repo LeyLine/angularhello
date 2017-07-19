@@ -5,7 +5,6 @@ import { CounterService } from '../services/counter.service';
   selector: 'app-my-counter',
   templateUrl: './my-counter.component.html',
   styleUrls: ['./my-counter.component.css'],
-  providers: [CounterService]
 })
 export class MyCounterComponent implements OnInit {
 constructor(private theCounter: CounterService) { }

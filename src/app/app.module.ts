@@ -21,6 +21,9 @@ import { RouterOutlet } from '@angular/router';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
+import { MySecondCounterComponent } from './my-second-counter/my-second-counter.component';
+import { CounterService } from './services/counter.service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -49,7 +52,8 @@ const routes: Routes = [
     MyAboutComponent,
     ContactListComponent,
     ContactComponent,
-    MyCounterComponent
+    MyCounterComponent,
+    MySecondCounterComponent
 
   ],
   imports: [
@@ -57,7 +61,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
