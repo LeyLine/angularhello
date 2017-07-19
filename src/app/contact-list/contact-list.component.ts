@@ -1,26 +1,27 @@
 import { Router } from '@angular/router';
-import { NgForExampleComponent } from './../ng-for-example/ng-for-example.component';
+import { ContactServiceService } from '../contact-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css']
+  styleUrls: ['./contact-list.component.css'],
+  providers: [ContactServiceService],
 })
 export class ContactListComponent implements OnInit {
-  contacts: Array<Object> = [
-     { id: 100, name: 'Andy' },
-     { id: 201, name: 'George' },
-     { id: 302, name: 'Max' }
-   ];
-  constructor(private router: Router) { }
+  contacts: Array<any>;
+  constructor(
+    private router: Router,
+    private contactService: ContactServiceService
+  ) { }
 
   ngOnInit() {
-  }
+    this.contacts = this.contactService.getList();
+    }
 
-  viewDetails(id) {
-    console.log('work');
-    this.router.navigate(['contact', id]);
+  viewDetails(id, param) {
+    this.router.navigate(['contact', id],
+    { queryParams: { foo: param} });
   }
 
 }

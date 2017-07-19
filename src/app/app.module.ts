@@ -23,7 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { MySecondCounterComponent } from './my-second-counter/my-second-counter.component';
 import { CounterService } from './services/counter.service';
-
+import { HttpModule } from '@angular/http';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,13 +53,14 @@ const routes: Routes = [
     ContactListComponent,
     ContactComponent,
     MyCounterComponent,
-    MySecondCounterComponent
+    MySecondCounterComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
   providers: [CounterService],
   bootstrap: [AppComponent]
